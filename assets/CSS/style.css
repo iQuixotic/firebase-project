@@ -1,0 +1,23 @@
+body {
+    background: rgb(184, 34, 34);
+}
+.myCard {
+    background: rgba(192, 186, 186, 0.4);
+    
+    font-size: 120%;
+    margin: 3px;
+    padding: -30px;
+}
+.bold {
+    font-weight: bold;
+    text-align: center;
+}
+.num-col {
+    padding: 3px 6px 3px 7px;
+    margin-right: 3px;
+    text-align: center;
+}
+#holdImg1 {
+    background: url("../images/train1.jpg") no-repeat;
+    background-size: cover;
+}
