@@ -1,9 +1,8 @@
 body {
-    background: rgb(184, 34, 34);
+    background: black;
 }
 .myCard {
-    background: rgba(192, 186, 186, 0.4);
-    
+    background: rgba(233, 217, 0, 0.473);
     font-size: 120%;
     margin: 3px;
     padding: -30px;
@@ -20,4 +19,10 @@ body {
 #holdImg1 {
     background: url("../images/train1.jpg") no-repeat;
     background-size: cover;
+}
+.green {
+    background:  rgba(233, 217, 0, 0.473);
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
 }

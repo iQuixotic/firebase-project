@@ -53,18 +53,22 @@
     $("#destination-input").val("");
     $("#arrival-input").val("");
 
+    var newDiv = $("<div>").attr('class', 'row');
 
+    var newTrainNameDiv = $("<div>").addClass('card justify-content-center myCard card col-lg-3');
+    // newTrainNameDiv = $("<div>").attr('class', 'myCard');
+    // newTrainNameDiv = $("<div>").attr('class', 'card');
+    // newTrainNameDiv = $("<div>").attr('class', 'col-lg-3');
+    var newTrainNumDiv =$("<div>").addClass('justify-content-center card myCard num-col');
+    var newTrainDestinationDiv =$("<div>").addClass('justify-content-center myCard card col-lg-3');
+    var newTrainFrequencyDiv =$("<div>").addClass('justify-content-center myCard card col-lg-2');
+    var newTrainArrivalDiv =$("<div>").attr('class', 'justify-content-center myCard card col-lg-2');
 
-
-    var newDiv = $("<div>");
-    var newTrainNameDiv =$("<div>").attr('justify-content-center myCard card col-lg-3');
-    var newTrainNumDiv =$("<div>").attr('justify-content-center card myCard num-col');
-    var newTrainDestinationDiv =$("<div>").attr('justify-content-center myCard card  col-lg-3');
-    var newTrainFrequencyDiv =$("<div>").attr('justify-content-center myCard card col-lg-2');
-    var newTrainArrivalDiv =$("<div>").attr('justify-content-center myCard card col-lg-2');
-
-    var p1 = $("<p>").val(trainName);
+    var p1 = $("<p>").text(trainName);
     newTrainNameDiv.append(p1);
+    console.log(trainName);
+    console.log(p1);
+    console.log(newTrainNameDiv);
     var p2 = $("<p>").text(trainNum);
     newTrainNumDiv.append(p2);
     var p3 = $("<p>").text(destination);
@@ -75,14 +79,31 @@
     newTrainArrivalDiv.append(p5);
 
 
-    newDiv.append(newTrainNumDiv + newTrainNameDiv + newTrainDestinationDiv + newTrainFrequencyDiv + newTrainArrivalDiv);
+    newDiv.append(newTrainNumDiv);
+    newDiv.append(newTrainNameDiv);
+    newDiv.append(newTrainDestinationDiv); 
+    newDiv.append(newTrainFrequencyDiv);
+    newDiv.append(newTrainArrivalDiv);
     $("#add-here").append(newDiv);
-});
 
+    //------------------------------------------------------------------------------------------------------------
 
+        database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
-
-
-
-
+      console.log(childSnapshot.val());
+    
+   
+      var newName  = childSnapshot.val().dataTrainName;
+      var newFrequency = childSnapshot.val().dataFrequency;
+      var newArrival = childSnapshot.val().dataArrival;
+      var newDestination = childSnapshot.val().dataDestination;
+      var newTrainNum= childSnapshot.val().dataTrainNum;
+    
+ 
+      console.log(newName);
+      console.log(newFrequency);
+      console.log(newArrival);
+      console.log(newDestination);
+      console.log(newTrainNum);
+      
 
